@@ -8,6 +8,7 @@
 - **General purpose OS**
 	- nato per applicazioni militari, si sviluppa poi per applicazioni civili
 	- non si utilizza solo per i personal computer, ma anche su dispositivi mobili, dispositivi embedded, sistemi industriali, ecc
+		- sistemi embedded contengono Real-Time OS
 ### struttura del sistema computer
 - ==Hardware==
 	- risorse computazionali (CPU, I/O, memoria, dispositivi, bus)
@@ -62,6 +63,9 @@
 		- causati da eccezioni o richieste al sistema operativo (system call)
 ### panoramica sistema operativo
 ![[Pasted image 20250225140051.png|600]]
+
+<div style="page-break-after: always;"></div>
+
 ### process management
 - ==Processo==
 	- programma in esecuzione
@@ -169,12 +173,13 @@
 - Sistemi **multiprocessori** o **paralleli**
 	- permettono più efficienza, velocità e tolleranza a errori
 - **Asymmetric Multiprocessing**
-	- a ogni processore è assegnata una specifica task
+	- ogni processore è dedicato a operazioni diverse
 - **Symmetric Multiprocessing (SMP)**
+	- ogni processore è uguale agli altri
+		- ogni processore può eseguire una qualsiasi task
 	- processori utilizzano la stessa memoria
-	- ogni processore può eseguire una qualsiasi task
 	- a ogni processore può essere assegnata una propria cache e una cache in comune
 - **Non-uniform memory access system (NUMA)**
-	- architettura dove ogni processore:
-		- può accedere velocemente a una propria memoria locale
-		- può accedere alle altre memorie e alla memoria condivisa più lentamente
+	- architettura dove ogni ogni CPU ha la propria zona di memoria allocata
+		- esclusività garantisce accesso più veloce e ottimizzato della memoria per ogni CPU
+	- ogni CPU può accedere alla memoria condivisa e alle altre memorie più lentamente
