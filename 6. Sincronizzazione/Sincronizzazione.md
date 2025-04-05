@@ -182,6 +182,8 @@
 >- Possibile spreco di risorse computazionali
 >- Soluzione valida se attesa è stimata breve
 
+<div style="page-break-after: always;"></div>
+
 ### semaforo
 - Variabile intera **S** che può essere modificata attraverso operazioni **atomiche**
 - ```wait()``` o ```P()```: rimane in **attesa** se ```S<=0```e poi ==decrementa== 
@@ -245,6 +247,8 @@
 >- Chiamare due ```wait``` consecutivi
 >	- processo si _blocca_ permanentemente alla seconda chiamata
 >- Dimenticare ```signal```dopo ```wait```
+
+<div style="page-break-after: always;"></div>
 
 ### monitor
 - **ADT** che facilita la **sincronizzazione** tra processi
@@ -339,6 +343,9 @@
 - **Lettore**
 	- ogni volta che deve modificare ```read_count```acquisisce ```mutex```
 	- primo lettore acquisisce ```rq_mutex``` e ultimo lettore rilascia ```rq_mutex```
+
+<div style="page-break-after: always;"></div>
+
 ### dining-philosophers problem
 - 5 filosofi a cena su **tavolo circolare**
 	- per mangiare devono acquisire **bacchetta** a **destra** e a **sinistra**
@@ -350,8 +357,10 @@
 - Utilizzo di un **monitor**
 	- garantisce **mutual exclusion** nelle operazioni effettuate dai metodi
 	- permette utilizzo **condition**
+
 ![[Pasted image 20250329091335.png|300]]
 ![[Pasted image 20250329091352.png|300]]
+
 - **Inizializzazione**
 	- tutti i filosofi ricevono stato di _THINKING_
 - **Pickup**
@@ -364,6 +373,9 @@
 	- avvia controllo (```test```) su bacchette disponibili per i filosofi adiacenti
 		- _disponibili_: cambia stato del relativo filosofo in _EATING_ e lo risveglia con ```signal```
 		- _non disponibili_: nessuna azione
+
+<div style="page-break-after: always;"></div>
+
 ### posix api per sincronizzazione
 - Disponibile anche in **user mode**
 - Sono forniti:
